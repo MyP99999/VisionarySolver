@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <title>Contact Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h3 {
+            color: #3f72af;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9e9e9;
+            padding-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3f72af;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #336699;
+        }
+
+        /* Stiluri pentru sectiunea FAQ */
+        .faq {
+            margin-top: 40px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-gray-600 h-24 flex justify-center items-center gap-3">
+        <a class="cursor-pointer text-2xl  hover:text-red-500" href="E:/Facultate/SOPM/zamzi/index.html">Home</a>
+        <a class="cursor-pointer text-2xl  hover:text-red-500" href="E:/Facultate/SOPM/zamzi/contact.html">Contact</a>
+        <a class="cursor-pointer text-2xl  hover:text-red-500" href="E:/Facultate/SOPM/zamzi/about.html">About</a>
+    </header>
+    <div class="container">
+        <h1>Contact</h1>
+        <div class="contact-info">
+            <div>
+                <h3>Adresa</h3>
+                <p>Str. Exemplu, Nr. 1, București</p>
+            </div>
+            <div>
+                <h3>Telefon</h3>
+                <p>+40700000000</p>
+            </div>
+            <div>
+                <h3>Email</h3>
+                <p>contact@exemplu.ro</p>
+            </div>
+        </div>
+
+        <h3>Trimite-ne un mesaj:</h3>
+        <form action="#">
+            <label for="name">Nume și Prenume:</label>
+            <input type="text" id="name" placeholder="Nume complet">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="adresa@example.com">
+
+            <label for="subject">Subiect:</label>
+            <input type="text" id="subject" placeholder="Subiectul mesajului">
+
+            <label for="message">Mesaj:</label>
+            <textarea id="message" rows="5" placeholder="Scrie aici mesajul tău..."></textarea>
+
+            <button type="submit">Trimite</button>
+        </form>
+
+        <div class="faq">
+            <h3>Întrebări frecvente</h3>
+
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                Cum pot să vă contactez?
+            </div>
+            <div class="faq-answer">
+                Puteți să ne contactați folosind formularul de mai sus sau prin telefon la +40700000000.
+            </div>
+
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                Cât durează până primesc un răspuns?
+            </div>
+            <div class="faq-answer">
+                De obicei, răspundem în termen de 24 de ore.
+            </div>
+        </div>
+
+        <script>
+            function toggleAnswer(element) {
+                var answer = element.nextElementSibling;
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
