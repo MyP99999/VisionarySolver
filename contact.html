@@ -89,6 +89,8 @@
         <a class="cursor-pointer text-2xl  hover:text-red-500" href="about.html">About</a>
     </header>
     <div class="container">
+        <div id="message-box" class="hidden bg-green-500 text-white p-3 rounded-md mb-4 text-center"></div>
+
         <h1>Contact</h1>
         <div class="contact-info">
             <div>
@@ -141,6 +143,38 @@
         </div>
 
         <script>
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevents the default form submission
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var subject = document.getElementById('subject').value;
+                var message = document.getElementById('message').value;
+
+                // Check if all fields are filled out
+                if (name && email && subject && message) {
+                    showMessage("Formularul a fost trimis cu succes!");
+                } else {
+                    showMessage("Te rugăm să completezi toate câmpurile.", true);
+                }
+            });
+
+            function showMessage(message, isError = false) {
+                var messageBox = document.getElementById('message-box');
+                messageBox.textContent = message;
+
+                if (isError) {
+                    messageBox.classList.remove('bg-green-500');
+                    messageBox.classList.add('bg-red-500');
+                } else {
+                    messageBox.classList.remove('bg-red-500');
+                    messageBox.classList.add('bg-green-500');
+                }
+
+                messageBox.classList.remove('hidden');
+            }
+
+
             function toggleAnswer(element) {
                 var answer = element.nextElementSibling;
                 if (answer.style.display === "none" || answer.style.display === "") {
@@ -149,6 +183,7 @@
                     answer.style.display = "none";
                 }
             }
+
         </script>
     </div>
 </body>
