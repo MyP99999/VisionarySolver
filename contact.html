@@ -48,7 +48,22 @@
             border-radius: 5px;
         }
 
-        button {
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            border: none;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+          background: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);
+        }
+
+         button {
             display: block;
             width: 100%;
             padding: 10px;
@@ -58,9 +73,19 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+	
         button:hover {
             background-color: #336699;
+        }
+    
+        .faq {
+            margin-top: 40px;
+        }
+    
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
         /* Stiluri pentru sectiunea FAQ */
@@ -84,9 +109,9 @@
 
 <body>
     <header class="bg-gray-600 h-24 flex justify-center items-center gap-3">
-        <a class="cursor-pointer text-2xl  hover:text-red-500" href="index.html">Home</a>
-        <a class="cursor-pointer text-2xl  hover:text-red-500" href="contact.html">Contact</a>
-        <a class="cursor-pointer text-2xl  hover:text-red-500" href="about.html">About</a>
+         <a class="button cursor-pointer">Home</a>
+        <a class="button cursor-pointer" href="contact.html">Contact</a>
+        <a class="button cursor-pointer" href="about.html">About</a>
     </header>
     <div class="container">
         <div id="message-box" class="hidden bg-green-500 text-white p-3 rounded-md mb-4 text-center"></div>
