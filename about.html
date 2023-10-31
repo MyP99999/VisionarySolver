@@ -9,41 +9,46 @@
 </head>
 
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-  
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-      border: none;
-      border-radius: 5px;
-      color: black;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-  
-    .button:hover {
-      background: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);
-    }
+    /* Setează stilurile globale pentru body */
+body {
+    font-family: Arial, sans-serif; /* Specifică fontul */
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); /* Fundal gradient */
+    margin: 0; /* Fără margini */
+    padding: 0; /* Fără padding */
+    color: #333; /* Culoarea textului */
+}
 
-    .team-member {
-        background-color: #fff;
-        padding: 0px;
-        margin: 0px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
+/* Stiluri pentru clasa "button" */
+.button {
+    display: inline-block; /* Butonul să fie inline-block */
+    padding: 10px 20px; /* Spatiere în interiorul butonului */
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); /* Fundal gradient */
+    border: none; /* Fără bordură */
+    border-radius: 5px; /* Colțuri rotunjite */
+    color: black; /* Culoarea textului */
+    text-decoration: none; /* Fără subliniere */
+    transition: background 0.3s ease; /* Tranziție fluidă pentru fundal */
+}
 
-    .team-member:hover {
-        transform: translateY(-5px);
-    }
+/* Stiluri pentru buton când este hover */
+.button:hover {
+    background: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%); /* Schimbă gradientul la hover */
+}
+
+/* Stiluri pentru membrii echipei */
+.team-member {
+    background-color: #fff; /* Fundal alb */
+    padding: 0px; /* Fără padding */
+    margin: 0px; /* Fără margini */
+    border-radius: 5px; /* Colțuri rotunjite */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră sub card */
+    transition: transform 0.3s ease; /* Tranziție fluidă pentru transformare */
+}
+
+/* Efect de hover pentru membrii echipei */
+.team-member:hover {
+    transform: translateY(-5px); /* Mișcă cardul puțin în sus la hover */
+}
   </style>
 
 
