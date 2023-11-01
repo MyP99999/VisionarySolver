@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Alege fontul Arial cu fallback la sans-serif în caz că Arial nu este disponibil */
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    /* Fundal cu gradient liniar de la verde la albastru */
+    margin: 0;
+    /* Elimină marginile implicite ale corpului */
+    padding: 0;
+    /* Elimină padding-ul implicit al corpului */
+    color: #333;
+    /* Culoarea implicită a textului */
+}
+
+/* 
+    Stilul pentru buton
+    Definește aspectul general al butonului.
+*/
+.button {
+    display: inline-block;
+    /* Permite butonului să fie aliniat cu alte elemente inline și să aibă padding și margini */
+    padding: 10px 20px;
+    /* Spatiere în interiorul butonului */
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    /* Fundal gradient pentru buton */
+    border: none;
+    /* Elimină bordura implicită a butonului */
+    border-radius: 5px;
+    /* Colțuri rotunjite pentru buton */
+    color: black;
+    /* Culoarea textului din buton */
+    text-decoration: none;
+    /* Elimină sublinierea (utilă în cazul în care .button este o legătură) */
+    transition: background 0.3s ease;
+    /* Adaugă o tranzitie la schimbarea fundalului (pentru efectul hover) */
+}
+
+/* 
+    Stilul pentru efectul hover al butonului
+    Schimbă fundalul butonului atunci când este survolat.
+*/
+.button:hover {
+    background: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);
+    /* Inversează culorile gradientului la hover */
+}
+
+/* 
+    Stilurile pentru cutia de testimoniale 
+    Definește aspectul și comportamentul casetei de testimoniale.
+*/
+.testimonial-box {
+    background-color: white;
+    /* Fundal alb pentru caseta de testimonial */
+    padding: 1.5rem;
+    /* Spatiere în interiorul casetei */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adaugă o umbră sub casetă */
+    position: relative;
+    /* Setează poziționarea relativă pentru a permite poziționarea absolută a pseudoelementelor în interiorul acestuia */
+    overflow: hidden;
+    /* Ascunde orice conținut care depășește dimensiunea casetei (util pentru gradientul animat) */
+    border-radius: 1rem;
+    /* Colțurile rotunjite */
+}
+
+/* 
+    Gradientul care se va mișca peste testimonial-box când este survolat 
+    Creează un efect de strălucire.
+*/
+.testimonial-box::before {
+    content: '';
+    /* Necesar pentru ca pseudoelementul să fie vizibil */
+    position: absolute;
+    /* Poziționare absolută în interiorul părintelui cu poziționare relativă */
+    top: 0;
+    /* Poziționat la partea de sus a părintelui */
+    left: 0;
+    /* Poziționat la stânga părintelui */
+    width: 100%;
+    /* Lățimea totală a părintelui */
+    height: 100%;
+    /* Înălțimea totală a părintelui */
+    background: linear-gradient(60deg, transparent 30%, rgba(90, 231, 184, 0.3) 50%, transparent 70%);
+    /* Gradientul care crează efectul de strălucire */
+    opacity: 0;
+    /* Inițial invizibil */
+    transition: transform 2s linear, opacity 0.3s ease;
+    /* Tranzitie pentru a mișca și a afișa gradientul */
+    transform: translateX(-100%);
+    /* Mută gradientul în afara ecranului la stânga */
+    border-radius: 1rem;
+    /* Colțurile rotunjite pentru a se potrivi cu containerul */
+}
+
+/* 
+    Efectul de hover pentru testimonial-box care va mișca gradientul 
+    Mișcă gradientul de la stânga la dreapta.
+*/
+.testimonial-box:hover::before {
+    transform: translateX(100%);
+    /* Mișcă gradientul în afara ecranului la dreapta */
+    opacity: 1;
+    /* Face gradientul vizibil */
+}
+
+#scrollTopBtn {
+    display: none;
+    /* Inițial, butonul este ascuns */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+#scrollTopBtn:hover {
+    opacity: 0.8;
+}
+
+/* 
+    Animația pentru efectul de strălucire 
+    Definește mișcarea gradientului de la stânga la dreapta.
+*/
+@keyframes shine {
+    0% {
+        left: -100%;
+        right: 100%;
+    }
+
+    100% {
+        left: 100%;
+        right: -100%;
+    }
+}
+
+/* 
+    Animația pentru efectul de plutire al imaginii 
+    Creează un efect de plutire, mișcând imaginea în sus și în jos.
+*/
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* Mișcă imaginea cu 15px mai sus */
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 
+    Stilul pentru imaginea care plutește 
+    Aplică animația de plutire imaginii.
+*/
+.floating-image {
+    animation: floatUpDown 2.5s infinite;
+    /* Aplică animația de plutire */
+    border: none;
+    /* Elimină orice bordură în jurul imaginii */
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, #8fd3f4 0%, #84fab0 100%);
+    border-color: rgba(0, 0, 0, 0.3);
+    /* O nuanță de gri mai deschisă la hover */
+}
